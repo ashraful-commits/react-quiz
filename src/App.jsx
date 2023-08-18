@@ -130,6 +130,11 @@ function App() {
                   <div className="card-header w-ful my-10">
                     <div className="flex justify-between my-3">
                       <h5 className="text-lg font-bold">Score:{score}</h5>
+                      <h5 className="text-lg font-bold">
+                        {" "}
+                        <span className="mx-2">Answered:</span>
+                        {next}/{limit}
+                      </h5>
                       <form action="">
                         <label htmlFor="" className="text-xl font-bold mx-4">
                           Q-Limit:
