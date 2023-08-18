@@ -39,6 +39,7 @@ function App() {
         {
           Q: next,
           index: index,
+          item,
         },
       ]);
     }
@@ -127,8 +128,13 @@ function App() {
                           bgColor.some(
                             (item) => item.index == index && item.Q == next
                           )
-                            ? "text-yellow-500"
-                            : "text-gray-700"
+                            ? bgColor.some(
+                                (bgItem) =>
+                                  bgItem.item == interviewQuestions[next].answer
+                              )
+                              ? "text-green-500"
+                              : "text-red-500"
+                            : "text-black-700"
                         } `}
                         key={index}
                       >
@@ -141,7 +147,7 @@ function App() {
                   {next > 0 && (
                     <button
                       onClick={handlePrev}
-                      className="bg-red-500 hover:bg-red-700 hover:text-white w-full py-2 rounded-full text-white text-xl font-bold"
+                      className="bg-yellow-500 hover:bg-yellow-700 hover:text-white w-full py-2 rounded-full text-white text-xl font-bold"
                     >
                       Prev
                     </button>
