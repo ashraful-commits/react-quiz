@@ -143,7 +143,7 @@ function App() {
                     );
                   })}
                 </div>
-                <div className="card-footer flex  justify-center ">
+                <div className="card-footer flex gap-5 justify-center ">
                   {next > 0 && (
                     <button
                       onClick={handlePrev}
