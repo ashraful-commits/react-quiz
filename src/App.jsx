@@ -63,7 +63,7 @@ function App() {
   useEffect(() => {}, [score, next, limit]);
   return (
     <>
-      <div className="container-fluid bg-gradient-to-b from-yellow-400 to-red-500 flex justify-center items-center w-screen h-screen">
+      <div className="container-fluid bg-gradient-to-b from-yellow-400 to-red-500 flex justify-center items-center w-screen h-auto pb-96 pt-32">
         <div className="row flex justify-center items-center flex-col">
           <h1 className=" text-3xl font-extrabold uppercase">
             Interview Questions
@@ -88,14 +88,14 @@ function App() {
                     </h1>
                   </div>
                   <div className="card-body mt-10 text-center flex flex-col gap-2 my-5">
-                    <p className="text-lg font-bold  py-5">
+                    <p className="text-lg font-bold  py-1">
                       Your score is:
-                      <span className="mx-3  border-green-500 border-2 rounded-lg p-5">
+                      <span className="mx-3  border-green-500 border-2 rounded-lg px-4 py-2">
                         {score}
                       </span>
                     </p>
                     {correctAns.length > 0 && (
-                      <h4 className="text-xl text-green-600 font-bold border-b-2 py-2">
+                      <h4 className="text-xl text-green-600 font-bold border-b-2 py-1">
                         Correct anwsers:
                       </h4>
                     )}
@@ -127,8 +127,8 @@ function App() {
                 </div>
               ) : (
                 <div className="card p-5 w-full">
-                  <div className="card-header w-ful my-10">
-                    <div className="flex justify-between my-3">
+                  <div className="card-header w-ful my-5">
+                    <div className="flex justify-between my-3 border-b-2 pb-2 bg-orange-400 rounded-lg px-3 py-3 w-full">
                       <h5 className="text-lg font-bold">Score:{score}</h5>
                       <h5 className="text-lg font-bold">
                         {" "}
@@ -175,7 +175,7 @@ function App() {
                           } `}
                           key={index}
                         >
-                          {item}
+                          <span>[+]</span> {item}
                         </button>
                       );
                     })}
