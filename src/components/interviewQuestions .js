@@ -221,6 +221,15 @@ export const interviewQuestions = [
     ],
     answer: 'Hoisting is a behavior in JavaScript where variable and function declarations are moved to the top of their containing scope during compilation.',
     explanation: 'In JavaScript, variable and function declarations are hoisted, meaning they are moved to the top of their containing scope during compilation. This allows you to use variables and functions before they are declared in your code. However, only the declarations are hoisted, not the assignments or initializations.'
+  }, {
+    question: 'What is the difference between `==` and `===` in JavaScript?',
+    options: [
+      '`==` is the equality operator that performs type coercion, while `===` is the strict equality operator that does not perform type coercion.',
+      '`===` is the equality operator that performs type coercion, while `==` is the strict equality operator that does not perform type coercion.',
+      '`==` and `===` are the same and can be used interchangeably in JavaScript.'
+    ],
+    answer: '`==` is the equality operator that performs type coercion, while `===` is the strict equality operator that does not perform type coercion.',
+    explanation: 'In JavaScript, the `==` operator compares values after performing type coercion, which means it can convert operands to the same type before comparison. The `===` operator, on the other hand, checks for strict equality without performing type coercion. It compares both value and type.'
   },
   ];
   
