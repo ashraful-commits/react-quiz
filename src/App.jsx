@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import interviewQuestions from "./components/interviewQuestions ";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const [next, setNext] = useState(null);
   const [limit, setLimit] = useState(10);
@@ -32,6 +33,33 @@ function App() {
   const handleSelect = (e, item, index) => {
     e.preventDefault();
     let isScore = item == interviewQuestions[next].answer;
+    if (!isScore) {
+      toast(
+        `🦄 Wrong answer!-----------------
+        Explaination:${interviewQuestions[next].explanation}`,
+        {
+          position: "top-center",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        }
+      );
+    } else {
+      toast("🦄 Right answer!", {
+        position: "top-center",
+        autoClose: 1000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
     if (bgColor.some((item) => item.Q == next)) {
       return false;
     }
@@ -59,11 +87,35 @@ function App() {
   };
   const handleLimite = (e) => {
     setLimit(e.target.value);
+    toast(`=> Limit: ${e.target.value}`, {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
   useEffect(() => {}, [score, next, limit]);
   return (
     <>
       <div className="container-fluid bg-gradient-to-b from-yellow-400 to-red-500 flex justify-center items-center w-screen h-auto pb-96 pt-32">
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
+        {/* Same as */}
+        <ToastContainer />
         <div className="row flex justify-center items-center flex-col">
           <h1 className=" text-3xl font-extrabold uppercase">
             Interview Questions
