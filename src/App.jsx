@@ -9,7 +9,7 @@ function App() {
   const [bgColor, setBgColor] = useState([]);
   const [correctAns, setCorrectAns] = useState([]);
   const InterviewQuestion = interviewQuestions.slice(0, limit);
-  console.log(InterviewQuestion);
+
   const handlePrev = () => {
     if (next == 0) {
       return false;
@@ -28,7 +28,7 @@ function App() {
     }
   };
   //
-  console.log(limit);
+
   const handleSelect = (e, item, index) => {
     e.preventDefault();
     let isScore = item == interviewQuestions[next].answer;
