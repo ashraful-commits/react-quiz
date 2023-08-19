@@ -117,12 +117,12 @@ function App() {
         {/* Same as */}
         <ToastContainer />
         <div className="row flex justify-center items-center flex-col">
-          <h1 className=" text-3xl font-extrabold uppercase">
+          <h1 className=" text-xl lg:text-4xl md:text-2xl font-extrabold uppercase">
             Interview Questions
           </h1>
           <p className="mb-10 mt-4 font-bold text-gray-700">JavaScript</p>
           {next === null ? (
-            <div className="col w-[400px] md:w-[500px] lg:w-[700px] px-5 rounded-xl h-[auto] py-40 flex justify-center bg-gradient-to-b from-gray-100 to-white">
+            <div className="col w-[300px] md:w-[500px] lg:w-[700px] px-5 rounded-xl h-[auto] py-40 flex justify-center bg-gradient-to-b from-gray-100 to-white">
               <button
                 onClick={() => setNext(0)}
                 className="w-[50%] py-4 rounded-full text-xl font-extrabold bg-yellow-400"
