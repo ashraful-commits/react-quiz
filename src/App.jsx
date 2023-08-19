@@ -122,7 +122,7 @@ function App() {
           </h1>
           <p className="mb-10 mt-4 font-bold text-gray-700">JavaScript</p>
           {next === null ? (
-            <div className="col w-[500px] rounded-xl h-[auto] py-40 flex justify-center bg-gradient-to-b from-gray-100 to-white">
+            <div className="col w-[400px] md:w-[500px] lg:w-[700px] px-5 rounded-xl h-[auto] py-40 flex justify-center bg-gradient-to-b from-gray-100 to-white">
               <button
                 onClick={() => setNext(0)}
                 className="w-[50%] py-4 rounded-full text-xl font-extrabold bg-yellow-400"
@@ -131,7 +131,7 @@ function App() {
               </button>
             </div>
           ) : (
-            <div className="col w-[500px] rounded-xl h-[auto] flex justify-center bg-gradient-to-b from-gray-100 to-white">
+            <div className="col w-[400px] md:w-[500px] lg:w-[700px] px-5 rounded-xl h-[auto] flex justify-center bg-gradient-to-b from-gray-100 to-white">
               {next === InterviewQuestion.length ? (
                 <div className="card p-5 w-full">
                   <div className="card-header w-full my-5 text-center">
@@ -140,7 +140,7 @@ function App() {
                     </h1>
                   </div>
                   <div className="card-body mt-10 text-center flex flex-col gap-2 my-5">
-                    <p className="text-lg font-bold  py-1">
+                    <p className="text-md lg:text-lg font-bold  py-1">
                       Your score is:
                       <span className="mx-3  border-green-500 border-2 rounded-lg px-4 py-2">
                         {score}
@@ -180,18 +180,32 @@ function App() {
               ) : (
                 <div className="card p-5 w-full">
                   <div className="card-header w-ful my-5">
-                    <div className="flex justify-between my-3 border-b-2 pb-2 bg-orange-400 rounded-lg px-3 py-3 w-full">
-                      <h5 className="text-lg font-bold">Score:{score}</h5>
-                      <h5 className="text-lg font-bold">
+                    <div className="flex justify-between my-3 border-b-2 pb-2 bg-orange-300 rounded-lg px-3 py-3 w-full">
+                      <h5 className="text-md lg:text-lg text-white font-bold">
+                        Score:
+                        <span className="text-black mx-2">{score}</span>
+                      </h5>
+                      <h5 className="text-md lg:text-lg font-bold">
                         {" "}
-                        <span className="mx-2">Answered:</span>
+                        <span className="mx-2 text-white">Answered:</span>
                         {next}/{limit}
                       </h5>
-                      <form action="">
-                        <label htmlFor="" className="text-xl font-bold mx-4">
+                      <form
+                        action=""
+                        className="flex flex-col justify-center md:items-center lg:flex-row md:flex-row "
+                      >
+                        <label
+                          htmlFor=""
+                          className="text-sm text-center lg:text-lg font-bold md:text-mdfont-bold text-white mx-4"
+                        >
                           Q-Limit:
                         </label>
-                        <select onChange={handleLimite} name="" id="">
+                        <select
+                          onChange={handleLimite}
+                          name=""
+                          className="bg-transparent w-12 focus:outline-none"
+                          id=""
+                        >
                           <option value="10">10</option>
                           <option value="15">15</option>
                           <option value="20">20</option>
@@ -202,7 +216,7 @@ function App() {
                         </select>
                       </form>
                     </div>
-                    <h1 className="text-lg w-full font-bold text-gray-700  flex gap-2">
+                    <h1 className="text-md lg:text-lg w-full font-bold text-gray-700  flex gap-2">
                       <span className="px-3">{next + 1}.</span>
                       <span>{InterviewQuestion[next]?.question}</span>
                     </h1>
